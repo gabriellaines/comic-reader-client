@@ -1,0 +1,17 @@
+<div *ngIf="comic" class="comic-reader" style="text-align: center">
+  <h2>{{ comic.name }}</h2>
+  <div class="reader-controls">
+    <a [routerLink]="['/comics']">Home</a>
+    <button (click)="prevPage()" [disabled]="currentPage <= 0">⬅</button>
+    <span>{{ currentPage + 1 }} / {{ comic.pages.length }}</span>
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage >= comic.pages.length - 1"
+    >
+      ➡
+    </button>
+  </div>
+  <div class="comic-page">
+    <img [src]="getCurrentPageUrl()" class="page-img" />
+  </div>
+</div>

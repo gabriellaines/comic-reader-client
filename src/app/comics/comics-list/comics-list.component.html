@@ -1,0 +1,34 @@
+<div *ngIf="comicsSubject | async as comics">
+  <section class="comics-list">
+    @for (comic of comics; track comic.id) {
+    <section class="comic">
+      <div class="comic-cover">
+        <img
+          [src]="getComicCover(comic.url)"
+          [alt]="comic.originalName"
+          [title]="comic.originalName"
+        />
+      </div>
+      <p>{{ comic.name }}</p>
+      <div class="comic-controlls">
+        <p-button (click)="readComic(comic)" severity="secondary">
+          <i class="pi pi-book"></i>
+        </p-button>
+        <p-button (click)="removeComic(comic.id)" severity="danger">
+          <i class="pi pi-trash"></i>
+        </p-button>
+      </div>
+      @if (getReadPercentage(comic) > 0) {
+      <div class="comic-read-percentage">
+        <progress
+          [id]="comic.originalName"
+          [value]="comic.currentPage"
+          [max]="comic.pageCount"
+        ></progress>
+        <p>{{ getReadPercentage(comic).toFixed(0) }}%</p>
+      </div>
+      }
+    </section>
+    }
+  </section>
+</div>

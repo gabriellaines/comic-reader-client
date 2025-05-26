@@ -1,0 +1,5 @@
+<app-comic-form></app-comic-form>
+<div *ngIf="latestComics | async as comics">
+  <app-latest-comics [latestComics]="comics"></app-latest-comics>
+</div>
+<router-outlet></router-outlet>

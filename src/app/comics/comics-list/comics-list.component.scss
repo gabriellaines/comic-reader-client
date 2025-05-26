@@ -1,0 +1,46 @@
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.comics-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.comic {
+  flex: 1 0 calc(25% - 1rem);
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: transparent;
+}
+
+.comic-cover img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.comic-controlls {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.comic-read-percentage {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}

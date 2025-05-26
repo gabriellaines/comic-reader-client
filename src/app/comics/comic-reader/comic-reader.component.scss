@@ -1,0 +1,53 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+a,
+h2 {
+  margin: 0 auto;
+}
+
+a {
+  position: absolute;
+  background-color: black;
+  color: white;
+  top: 0;
+  right: 0;
+}
+
+.comic-reader {
+  background-color: #111;
+
+  h2 {
+    color: #fff;
+  }
+}
+
+.comic-page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 93vh;
+}
+
+.page-img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  margin: 0;
+}
+
+.reader-controls {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: #111;
+  color: white;
+}
